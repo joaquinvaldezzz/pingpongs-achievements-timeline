@@ -1,8 +1,8 @@
-# John Joaquin Valdez
+# Pingpongs' Achievements Timeline
 
-This landing page uses [Next.js](https://nextjs.org) to showcase its services and projects.
+This project uses [Next.js](https://nextjs.org/) to present Pingpongs' achievements timeline.
 
-This project uses [pnpm](https://pnpm.io) as the package manager, so ensure it's installed on your machine before running the project. If it's not installed, follow the instructions in the [pnpm documentation](https://pnpm.io/installation).
+It uses [pnpm](https://pnpm.io/) as the package manager, so make sure it's installed on your machine before you run the project. If it isn't, follow the steps in the [pnpm documentation](https://pnpm.io/installation).
 
 First, install the dependencies:
 
