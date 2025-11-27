@@ -1,6 +1,3 @@
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
@@ -30,11 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-w-80 bg-background text-foreground antialiased">
-        {children}
-        <Analytics />
-        <SpeedInsights />
-      </body>
+      <body className="min-w-80 bg-background text-foreground antialiased">{children}</body>
     </html>
   );
 }
