@@ -23,8 +23,10 @@ import {
 import { fieldStyles } from "./field";
 import { PopoverContent } from "./popover";
 
-interface SelectProps<T extends object, M extends "single" | "multiple" = "single">
-  extends SelectPrimitiveProps<T, M> {
+interface SelectProps<
+  T extends object,
+  M extends "single" | "multiple" = "single",
+> extends SelectPrimitiveProps<T, M> {
   items?: Iterable<T, M>;
 }
 
@@ -41,8 +43,10 @@ function Select<T extends object, M extends "single" | "multiple" = "single">({
   );
 }
 
-interface SelectListProps<T extends object>
-  extends Omit<ListBoxProps<T>, "layout" | "orientation"> {
+interface SelectListProps<T extends object> extends Omit<
+  ListBoxProps<T>,
+  "layout" | "orientation"
+> {
   items?: Iterable<T>;
   popover?: Omit<PopoverProps, "children">;
 }
