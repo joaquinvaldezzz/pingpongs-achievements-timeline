@@ -5,7 +5,7 @@ import "../styles/main.css";
 
 export const baseURL = "https://pingpongs-timeline.vercel.app/";
 export const title = "Achievements Timeline";
-export const description = "Pingpong's Achievements Timeline since Graduation 2025.";
+export const description = "Pingpongs' Achievements Timeline since Graduation 2025.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseURL),
