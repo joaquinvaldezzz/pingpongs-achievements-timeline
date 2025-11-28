@@ -76,7 +76,7 @@ function Avatar({
       ) : null}
       {src ? (
         <Image
-          className="size-full object-cover object-center"
+          className="pointer-events-none size-full object-cover object-center"
           width={width}
           src={src}
           alt={alt}
