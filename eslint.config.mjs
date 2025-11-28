@@ -166,4 +166,10 @@ export default [
   ...perfectionistConfig,
   // Prettier Config
   ...prettierConfig,
+  {
+    files: ["prettier.config.js"],
+    languageOptions: {
+      sourceType: "commonjs",
+    },
+  },
 ];

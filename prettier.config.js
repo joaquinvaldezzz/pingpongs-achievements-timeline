@@ -1,0 +1,30 @@
+/** @type {import("prettier").Config} */
+module.exports = {
+  printWidth: 100,
+  plugins: [
+    require.resolve("@ianvs/prettier-plugin-sort-imports"),
+    require.resolve("prettier-plugin-jsdoc"),
+    require.resolve("prettier-plugin-tailwindcss"),
+  ],
+  importOrder: [
+    "<BUILTIN_MODULES>",
+    "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(next$)",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@/config/(.*)$",
+    "^@/lib/(.*)$",
+    "^@/hooks/(.*)$",
+    "^@/components/ui/(.*)$",
+    "^@/components/(.*)$",
+    "^@/styles/(.*)$",
+    "",
+    "<TYPES>",
+    "<TYPES>^@/types/(.*)$",
+    "<TYPES>^[./]",
+    "",
+    "^[./]",
+  ],
+  tailwindStylesheet: "./src/styles/main.css",
+  tailwindFunctions: ["cva", "tv"],
+};
