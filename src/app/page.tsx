@@ -1,4 +1,5 @@
 import { formatDate, getAchievements } from "@/lib/utils";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export default async function Page() {
   const achievements = await getAchievements();
@@ -10,7 +11,9 @@ export default async function Page() {
         aria-hidden
       />
       <main className="mx-auto max-w-3xl px-4 pt-16">
-        <h1 className="max-w-md text-3xl font-semibold tracking-tight md:text-4xl">
+        <ThemeSwitcher />
+
+        <h1 className="mt-6 max-w-md text-3xl font-semibold tracking-tight md:text-4xl">
           <span className="text-violet-500">OT7 Pingpongs&apos;</span> Achievements Timeline
         </h1>
 
@@ -37,6 +40,7 @@ export default async function Page() {
           ))}
         </ol>
       </main>
+
       <div
         className="pointer-events-none fixed inset-x-0 bottom-0 h-24 bg-linear-to-t from-background mask-t-from-0% backdrop-blur-sm will-change-transform"
         aria-hidden
