@@ -46,7 +46,7 @@ export function Profile({ people, size = "2xl", className = "" }: AvatarProps & 
               />
             </TooltipTrigger>
 
-            <TooltipContent placement="right">
+            <TooltipContent>
               <p>{data.name}</p>
             </TooltipContent>
           </Tooltip>
