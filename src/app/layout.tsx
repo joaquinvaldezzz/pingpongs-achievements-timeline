@@ -1,11 +1,13 @@
 import localFont from "next/font/local";
 
+import { cn } from "@/lib/utils";
+
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-import "../styles/main.css";
+import { Providers } from "./providers";
 
-import { cn } from "@/lib/utils";
+import "../styles/main.css";
 
 export const baseURL = "https://pingpongs-timeline.vercel.app/";
 export const title = "OT7 Pingpongs' Achievements Timeline";
@@ -46,9 +48,9 @@ const inter = localFont({
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html className={cn(inter.variable)} lang="en">
+    <html className={cn(inter.variable)} lang="en" suppressHydrationWarning>
       <body className="min-w-80 bg-background text-pretty text-foreground slashed-zero antialiased">
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
