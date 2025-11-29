@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 import type { AvatarProps } from "./ui/avatar";
 
@@ -14,12 +15,12 @@ import { Avatar } from "./ui/avatar";
 type PersonName = "ahmad" | "alliyah" | "jessa" | "jhujane" | "joaquin" | "razel" | "tal";
 
 const PEOPLE_MAP: Record<PersonName, { image: string; initials: string; name: string }> = {
-  ahmad: { image: Ahmad.src, initials: "AP", name: "Ahmad Panday" },
-  alliyah: { image: Alliyah.src, initials: "AL", name: "Alliyah Daphne Lao" },
+  ahmad: { image: Ahmad.src, initials: "AP", name: "Ahmad Panday, RCE" },
+  alliyah: { image: Alliyah.src, initials: "AL", name: "Alliyah Daphne Lao, CHRA, RPm" },
   jessa: { image: Jessa.src, initials: "JE", name: "Jessamea Cañada" },
-  jhujane: { image: Jhujane.src, initials: "JH", name: "Jhujane Pante" },
+  jhujane: { image: Jhujane.src, initials: "JH", name: "Jhujane Pante, RN" },
   joaquin: { image: Joaquin.src, initials: "JO", name: "John Joaquin Valdez" },
-  razel: { image: Razel.src, initials: "RA", name: "Rirginia Razel Sabado" },
+  razel: { image: Razel.src, initials: "RA", name: "Rirginia Razel Sabado, RN" },
   tal: { image: Tal.src, initials: "TA", name: "Christal Sofia Malbago" },
 };
 
@@ -33,16 +34,22 @@ export function Profile({ people, size = "2xl", className = "" }: AvatarProps & 
       {people.map((person) => {
         const data = PEOPLE_MAP[person];
         return (
-          <Avatar
-            className="not-prose ring-2 ring-white dark:ring-zinc-900"
-            src={data.image}
-            alt={data.name}
-            initials={data.initials}
-            key={person}
-            size={size}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority
-          />
+          <Tooltip delay={0} key={person}>
+            <TooltipTrigger>
+              <Avatar
+                className="not-prose ring-2 ring-white dark:ring-zinc-900"
+                src={data.image}
+                alt={data.name}
+                size={size}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
+              />
+            </TooltipTrigger>
+
+            <TooltipContent placement="right">
+              <p>{data.name}</p>
+            </TooltipContent>
+          </Tooltip>
         );
       })}
     </div>
