@@ -10,20 +10,18 @@ export default async function Page() {
         aria-hidden
       />
       <div className="mx-auto max-w-3xl px-4 pt-16 pb-8">
-        <ol className="">
+        <ol>
           {achievements.map((achievement, index) => (
             <li className="relative flex gap-3" key={`achievement-${index + 1}`}>
               <div className="flex flex-col items-center pt-1 md:pt-1.5">
                 <div className="size-4 shrink-0 rounded-full bg-violet-500" />
-                <div className="h-full w-0.5 bg-violet-100" />
+                <div className="-mb-1 h-full w-0.5 bg-violet-100 md:-mb-1.5" />
               </div>
 
-              <div className="grid grid-cols-1 gap-3 pb-6 max-md:pt-0.5 md:w-full md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-3 pb-6 max-md:pt-0.5 md:w-full md:grid-cols-3 md:pb-12">
                 <div className="md:col-span-1 md:pt-1">
                   <h2 className="text-sm text-gray-600">
-                    <time className="slashed-zero" dateTime={achievement.title}>
-                      {formatDate(achievement.title)}
-                    </time>
+                    <time dateTime={achievement.title}>{formatDate(achievement.title)}</time>
                   </h2>
                 </div>
 
