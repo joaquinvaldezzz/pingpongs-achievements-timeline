@@ -6,7 +6,7 @@ export default async function Page() {
   return (
     <div>
       <div
-        className="pointer-events-none fixed inset-x-0 top-0 z-10 h-24 bg-linear-to-b from-white mask-b-from-0% backdrop-blur-sm will-change-transform"
+        className="pointer-events-none fixed inset-x-0 top-0 z-10 h-24 bg-linear-to-b from-background mask-b-from-0% backdrop-blur-sm will-change-transform"
         aria-hidden
       />
       <main className="mx-auto max-w-3xl px-4 pt-16">
@@ -19,12 +19,12 @@ export default async function Page() {
             <li className="relative flex gap-3" key={`achievement-${index + 1}`}>
               <div className="flex flex-col items-center pt-1 md:pt-1.5">
                 <div className="size-4 shrink-0 rounded-full bg-violet-500" />
-                <div className="-mb-1 h-full w-0.5 bg-violet-100 md:-mb-1.5" />
+                <div className="-mb-1 h-full w-0.5 bg-violet-100 md:-mb-1.5 dark:bg-violet-900" />
               </div>
 
               <div className="grid grid-cols-1 gap-3 pb-6 max-md:pt-0.5 md:w-full md:grid-cols-3 md:pb-12">
                 <div className="md:col-span-1 md:pt-1">
-                  <h2 className="text-sm text-gray-600">
+                  <h2 className="text-sm text-foreground">
                     <time dateTime={achievement.title}>{formatDate(achievement.title)}</time>
                   </h2>
                 </div>
@@ -38,7 +38,7 @@ export default async function Page() {
         </ol>
       </main>
       <div
-        className="pointer-events-none fixed inset-x-0 bottom-0 h-24 bg-linear-to-t from-white mask-t-from-0% backdrop-blur-sm will-change-transform"
+        className="pointer-events-none fixed inset-x-0 bottom-0 h-24 bg-linear-to-t from-background mask-t-from-0% backdrop-blur-sm will-change-transform"
         aria-hidden
       />
     </div>
