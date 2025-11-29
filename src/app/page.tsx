@@ -9,8 +9,12 @@ export default async function Page() {
         className="pointer-events-none fixed inset-x-0 top-0 z-10 h-24 bg-linear-to-b from-white mask-b-from-0% backdrop-blur-sm will-change-transform"
         aria-hidden
       />
-      <div className="mx-auto max-w-3xl px-4 pt-16 pb-8">
-        <ol>
+      <main className="mx-auto max-w-3xl px-4 pt-16">
+        <h1 className="max-w-md text-3xl font-semibold tracking-tight md:text-4xl">
+          <span className="text-violet-500">OT7 Pingpongs&apos;</span> Achievements Timeline
+        </h1>
+
+        <ol className="mt-8 pb-8 md:mt-12">
           {achievements.map((achievement, index) => (
             <li className="relative flex gap-3" key={`achievement-${index + 1}`}>
               <div className="flex flex-col items-center pt-1 md:pt-1.5">
@@ -32,7 +36,7 @@ export default async function Page() {
             </li>
           ))}
         </ol>
-      </div>
+      </main>
       <div
         className="pointer-events-none fixed inset-x-0 bottom-0 h-24 bg-linear-to-t from-white mask-t-from-0% backdrop-blur-sm will-change-transform"
         aria-hidden
