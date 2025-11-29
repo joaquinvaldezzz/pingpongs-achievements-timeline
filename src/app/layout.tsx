@@ -11,7 +11,8 @@ import "../styles/main.css";
 
 export const baseURL = "https://pingpongs-timeline.vercel.app/";
 export const title = "OT7 Pingpongs' Achievements Timeline";
-export const description = "OT7 Pingpongs' Achievements Timeline";
+export const description =
+  "Track the academic and professional accomplishments of OT7 Pingpongs with this achievement timeline.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseURL),
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
     template: "%s | 0T7 Pingpongs",
   },
   description,
+  applicationName: "OT7 Pingpongs' Achievements Timeline",
+  authors: [{ name: "John Joaquin A. Valdez" }],
+  creator: "John Joaquin A. Valdez",
   openGraph: {
     title,
     description,
