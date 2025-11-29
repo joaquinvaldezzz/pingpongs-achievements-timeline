@@ -8,14 +8,14 @@ import "../styles/main.css";
 import { cn } from "@/lib/utils";
 
 export const baseURL = "https://pingpongs-timeline.vercel.app/";
-export const title = "Achievements Timeline";
-export const description = "Pingpongs' Achievements Timeline since Graduation 2025.";
+export const title = "OT7 Pingpongs' Achievements Timeline";
+export const description = "OT7 Pingpongs' Achievements Timeline";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseURL),
   title: {
     default: title,
-    template: "%s | John Joaquin Valdez",
+    template: "%s | 0T7 Pingpongs",
   },
   description,
   openGraph: {
