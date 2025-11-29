@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { twMerge } from "tailwind-merge";
+
+import { cn } from "@/lib/utils";
 
 interface AvatarProps extends React.ComponentPropsWithoutRef<typeof Image> {
   initials?: string;
@@ -33,8 +34,9 @@ function Avatar({
 }: AvatarProps & React.ComponentPropsWithoutRef<"span">) {
   return (
     <span
-      className={twMerge(
-        "relative isolate inline-grid size-(--avatar-size) shrink-0 align-middle outline-1 -outline-offset-1 outline-fg/(--ring-opacity) [--avatar-radius:20%] [--ring-opacity:20%] *:col-start-1 *:row-start-1 *:size-(--avatar-size)",
+      className={cn(
+        "relative isolate inline-grid size-(--avatar-size) shrink-0 overflow-hidden align-middle outline-1 -outline-offset-1 outline-fg/(--ring-opacity) [--avatar-radius:20%] [--ring-opacity:20%] *:col-start-1 *:row-start-1 *:size-(--avatar-size)",
+        "before:absolute before:inset-0 before:z-10 before:bg-violet-600/50 before:mix-blend-lighten",
         size === "xs" && "[--avatar-size:--spacing(5)]",
         size === "sm" && "[--avatar-size:--spacing(6)]",
         size === "md" && "[--avatar-size:--spacing(8)]",
@@ -76,7 +78,7 @@ function Avatar({
       ) : null}
       {src ? (
         <Image
-          className="pointer-events-none size-full object-cover object-center"
+          className="pointer-events-none size-full object-cover object-center mix-blend-multiply contrast-100 grayscale"
           src={src}
           alt={alt}
           fill
