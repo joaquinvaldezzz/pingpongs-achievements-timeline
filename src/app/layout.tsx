@@ -47,7 +47,7 @@ const inter = localFont({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html className={cn(inter.variable)} lang="en">
-      <body className="min-w-80 bg-background text-balance text-foreground slashed-zero antialiased">
+      <body className="min-w-80 bg-background text-pretty text-foreground slashed-zero antialiased">
         {children}
       </body>
     </html>
