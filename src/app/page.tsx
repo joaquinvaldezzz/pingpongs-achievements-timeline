@@ -14,7 +14,7 @@ export default async function Page() {
           <span className="text-violet-500">OT7 Pingpongs&apos;</span> Achievements Timeline
         </h1>
 
-        <ol className="mt-8 pb-8 md:mt-12">
+        <ol className="mt-8 md:mt-12">
           {achievements.map((achievement, index) => (
             <li className="relative flex gap-3" key={`achievement-${index + 1}`}>
               <div className="flex flex-col items-center pt-1 md:pt-1.5">
