@@ -42,6 +42,7 @@ export function Profile({ people, size = "2xl", className = "" }: AvatarProps & 
                 alt={data.name}
                 size={size}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                isDuotone
                 priority
               />
             </TooltipTrigger>
