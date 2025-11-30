@@ -19,24 +19,23 @@ interface AvatarProps extends React.ComponentPropsWithoutRef<typeof Image> {
     | "7xl"
     | "8xl"
     | "9xl";
+  isDuotone?: boolean;
 }
 
 function Avatar({
   src = "",
+  alt = "",
+  initials = undefined,
   isSquare = false,
   size = "md",
-  initials = undefined,
-  alt = "",
+  isDuotone = false,
   className = undefined,
-  width,
-  height,
   ...props
 }: AvatarProps & React.ComponentPropsWithoutRef<"span">) {
   return (
     <span
       className={cn(
         "relative isolate inline-grid size-(--avatar-size) shrink-0 overflow-hidden align-middle outline-1 -outline-offset-1 outline-fg/(--ring-opacity) [--avatar-radius:20%] [--ring-opacity:20%] *:col-start-1 *:row-start-1 *:size-(--avatar-size)",
-        "before:absolute before:inset-0 before:z-10 before:bg-violet-600/50 before:mix-blend-lighten",
         size === "xs" && "[--avatar-size:--spacing(5)]",
         size === "sm" && "[--avatar-size:--spacing(6)]",
         size === "md" && "[--avatar-size:--spacing(8)]",
@@ -53,6 +52,8 @@ function Avatar({
         isSquare
           ? "rounded-(--avatar-radius) *:rounded-(--avatar-radius)"
           : "rounded-full *:rounded-full",
+        isDuotone &&
+          "before:absolute before:inset-0 before:z-10 before:bg-violet-600/50 before:mix-blend-lighten",
         className,
       )}
       data-slot="avatar"
